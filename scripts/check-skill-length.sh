@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# Enforce that SKILL.md files do not exceed 300 lines.
 set -euo pipefail
 
 MAX_LINES=250
