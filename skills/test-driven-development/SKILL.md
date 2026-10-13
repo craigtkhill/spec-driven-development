@@ -94,14 +94,10 @@ After all tests pass, continue with next requirements and repeat the cycle.
 
 ## TDD Rules
 
-### Rule 1: Update Spec as You Go
-- ✅ DO update spec.yaml to mark requirements as tested after tests pass
-- ✅ Keep spec in sync with implementation progress
-
-**Updating spec.yaml markers:**
-- After writing unit test that passes: `test: to-implement` → `test: unit`
-- After code passes unit test: `code: to-implement` → `code: done`
-- For acceptance test markers, see the `acceptance-test` skill
+### Rule 1: The Tests Are the Spec
+- ✅ DO start from an `#[ignore = "to-implement"]` stub and remove `#[ignore]` when you write the test
+- ✅ DO keep test names accurate; renaming a test changes the spec
+- No markers to update: passing = done, ignored = not built
 
 ### Rule 2: Always Run Tests
 **CRITICAL**: Tests MUST go through the RED → GREEN → VERIFY cycle:
@@ -146,26 +142,23 @@ See [WORKFLOW.md](WORKFLOW.md) for the full step-by-step diagram.
 - Fast, focused, and run frequently
 - Located within the feature directory
 - Should cover the vast majority of your testing needs
-- Marked with `test: unit` in spec.yaml
 
 **For acceptance tests and scenarios, use the `acceptance-test` skill.**
 
 ### Test Grouping
-Organize tests by requirement sections:
+Organize tests by feature:
 - Group related tests together
 - Use clear section/class names
-- Mirror the spec structure
 
 ### Test Naming
 Follow project conventions for test names:
 - Descriptive names that explain what's being tested
-- Include requirement reference in documentation
+- The name IS the requirement; add a `///` line only if the name is not enough
 - Use consistent naming pattern
 
 ### Test Documentation
 Each test should have:
 - Clear name describing behavior
-- Documentation linking to spec requirement
 
 ## Integration with STDD Workflow
 
@@ -176,9 +169,9 @@ TDD is **STEP 2** of the spec-test-driven development workflow:
 3. Implement Code (minimal code to pass tests)
 
 When writing tests:
-1. Reference spec requirements in test documentation
-2. Follow test organization from spec sections
-3. Write tests for requirements from the spec
+1. Start from the ignored stubs written in the spec step
+2. Fill in one stub at a time
+3. Write tests for every stub
 4. Decide whether to write one test at a time or multiple tests based on complexity and certainty (see "How Many Tests to Write at Once?" above)
 
 ## Common Mistakes to Avoid
@@ -204,17 +197,16 @@ When writing tests:
 Use this checklist for your TDD workflow **in this exact order**:
 
 1. [ ] Tests written with clear names and documentation
-2. [ ] Tests reference specific requirements from spec
+2. [ ] Each test started from an ignored requirement stub
 3. [ ] **Tests run and FAILED (RED)** ✓ ← DO NOT SKIP THIS
 4. [ ] Minimal implementation written (ONLY after seeing RED)
 5. [ ] Tests run and PASSED (GREEN) ✓
 6. [ ] ALL tests run and PASSED (VERIFY) ✓
-7. [ ] **spec.yaml updated with test markers** (test: unit or test: acceptance) ✓
-8. [ ] **spec.yaml updated with implementation markers** (code: done) if code complete ✓
-9. [ ] Code refactored if needed (optional)
-10. [ ] ALL tests still pass after refactoring
-11. [ ] No broken tests
-12. [ ] Ready to continue
+7. [ ] `#[ignore]` removed from the tests now passing
+8. [ ] Code refactored if needed (optional)
+9. [ ] ALL tests still pass after refactoring
+10. [ ] No broken tests
+11. [ ] Ready to continue
 
 **Critical reminder:** Steps 3-6 MUST happen in order:
 - RED (tests fail) → then implement → GREEN (tests pass) → then VERIFY (all tests pass)

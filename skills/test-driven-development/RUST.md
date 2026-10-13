@@ -21,8 +21,6 @@ mod tests {
 
     #[test]
     fn test_should_do_something() {
-        // REQ-XXX-001
-
         // Test implementation
     }
 }
@@ -46,8 +44,7 @@ impl Model {
 src/
   feature/
     mod.rs          # Feature module exports
-    models.rs       # Tests ABOVE implementation
-    spec.yaml
+    models.rs       # //! feature story, tests ABOVE implementation
 ```
 
 ### Integration Tests
@@ -73,7 +70,7 @@ Use Rust's built-in **test framework** with the following conventions:
 
 ### Test Module Organization
 
-Organize tests by requirement sections using modules:
+Organize tests by feature area using modules:
 
 ```rust
 #[cfg(test)]
@@ -109,8 +106,6 @@ Follow this pattern:
 ```rust
 #[test]
 fn test_should_{expected_behavior}() {
-    // REQ-XXX-NNN
-
     // Given
 
     // When
@@ -119,11 +114,11 @@ fn test_should_{expected_behavior}() {
 }
 ```
 
-**Requirement Comments:**
-- Place requirement ID as FIRST line INSIDE the test function
-- Use ONLY the requirement ID (e.g., `// REQ-XXX-NNN`)
-- DO NOT include the full requirement description
-- The requirement ID is sufficient to link to spec.yaml
+**Requirements:**
+- The test name IS the requirement; there are no requirement IDs
+- Add a `///` line above the test only when the name is not enough
+- Unwritten requirements are empty stubs: `#[test] #[ignore = "to-implement"] fn test_should_...() {}`
+- List the backlog with `cargo nextest run --run-ignored ignored-only`
 
 **Given/When/Then Comments:**
 - Use simple comments: `// Given`, `// When`, `// Then`
@@ -243,8 +238,6 @@ mod tests {
 
     #[test]
     fn test_should_validate_input() {
-        // REQ-XXX-001
-
         // Given
         let input = vec!["test".to_string()];
 

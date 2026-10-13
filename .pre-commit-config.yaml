@@ -6,10 +6,3 @@ repos:
         entry: scripts/check-skill-length.sh
         language: script
         files: SKILL\.md$
-
-      - id: check-spec-ids
-        name: check spec requirement ID uniqueness
-        entry: scripts/check-spec-ids.sh
-        language: script
-        files: spec\.yaml$
-        pass_filenames: false

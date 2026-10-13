@@ -1,6 +1,6 @@
 ---
 name: acceptance-test
-description: Use when writing acceptance tests or adding scenarios to spec.yaml. Defines Given/When/Then format and acceptance test patterns.
+description: Use when writing acceptance tests or scenarios. Defines Given/When/Then format and acceptance test patterns.
 ---
 
 # Acceptance Test Skill
@@ -18,17 +18,22 @@ Write acceptance tests when the feature requires end-to-end testing across multi
 
 If the feature only involves isolated logic within a single module, use unit tests instead.
 
-## Scenarios in spec.yaml
+## Scenarios
 
-Scenarios live in the `scenarios` section of spec.yaml. Only add scenarios when the feature requires end-to-end testing with other modules. Ask the user if scenarios apply before adding them.
+Scenarios are acceptance tests in `tests/{feature}_scenarios.rs`. Only add them when the feature requires end-to-end testing with other modules. Ask the user if scenarios apply before adding them.
 
-```yaml
-scenarios:
-  - name: Descriptive scenario name
-    given: Setup/preconditions
-    when: User action/trigger
-    then: Expected outcome/verification
+```rust
+/// Scenario: Descriptive scenario name
+#[test]
+#[ignore = "to-implement"]
+fn descriptive_scenario_name() {
+    // given: setup/preconditions
+    // when: user action/trigger
+    // then: expected outcome/verification
+}
 ```
+
+Write the ignored stub first, then fill it in.
 
 **Describe WHAT, not HOW:**
 - Focus on user behavior and system outcomes
@@ -42,27 +47,27 @@ scenarios:
 
 ## Acceptance Test Structure
 
-Acceptance tests follow the Given/When/Then pattern from scenarios:
+Acceptance tests follow the Given/When/Then pattern:
 
 - **Given** — Setup/preconditions
 - **When** — User action/trigger
 - **Then** — Expected outcome/verification
 
-Each acceptance test should map to a scenario in spec.yaml.
+Each acceptance test is one scenario.
 
 ## Acceptance Tests vs Unit Tests vs Integration Tests
 
 **Unit Tests:**
 - Test individual functions/classes in isolation
 - Fast, focused, and run frequently
-- Marked with `test: unit` in spec.yaml
+- Live in the `tests` module next to the code
 
 **Acceptance Tests:**
 - Test complete features from a user/business perspective
 - Verify requirements are met end-to-end within a feature
-- Test scenarios from the spec (Given/When/Then)
+- Test scenarios (Given/When/Then)
 - May involve multiple units working together
-- Marked with `test: acceptance` in spec.yaml
+- Live in `tests/{feature}_scenarios.rs`
 
 **Integration Tests:**
 - Test interactions between multiple modules or external systems
@@ -70,9 +75,3 @@ Each acceptance test should map to a scenario in spec.yaml.
 - Located in `tests/` directory at project root
 
 **Test hierarchy:** Default to unit tests. Use acceptance tests when you need end-to-end feature validation. Use integration tests sparingly for tactical external integration needs.
-
-## Updating spec.yaml Markers
-
-- After writing acceptance test that passes: `test: to-implement` → `test: acceptance`
-- After code passes acceptance test: `code: to-implement` → `code: done`
-- When acceptance test passes, mark related unit-tested features as implemented: `code: to-implement` → `code: done`

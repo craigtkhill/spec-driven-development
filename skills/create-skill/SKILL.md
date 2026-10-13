@@ -92,12 +92,11 @@ The description is **critical** for skill discovery and invocation.
 Skills can include additional files referenced from SKILL.md:
 
 ```markdown
-For Python testing: See [PYTHON.md](PYTHON.md)
-For JavaScript testing: See [JAVASCRIPT.md](JAVASCRIPT.md)
+For Python, where it differs from the Rust approach: See [PYTHON.md](PYTHON.md)
 ```
 
 **Common Supporting Files:**
-- Language-specific guides (`PYTHON.md`, `JAVASCRIPT.md`)
+- Guides for other languages where they differ from Rust (`PYTHON.md`, `TYPESCRIPT.md`)
 - Templates (`TEMPLATE.md`, `templates/spec-template.md`)
 - Examples (`EXAMPLES.md`)
 - Scripts (`scripts/helper.py`)
@@ -124,10 +123,11 @@ When creating a new skill:
 ✅ **Use correct filename** - Must be `SKILL.md` (uppercase)
 ✅ **Use proper naming** - Use lowercase letters and hyphens for separation
 ✅ **Be specific** - Clearly define when to use the skill
-✅ **Keep content generic** - Do not make guidelines specific to the current project but Make SKILL.md and supporting files reusable across projects
-✅ **Separate language specifics** - Put language/tech-specific details in separate files (PYTHON.md, RUST.md, etc.)
+✅ **Keep content project-agnostic** - Do not make guidelines specific to the current project; make SKILL.md and supporting files reusable across projects
+✅ **Rust first** - Write SKILL.md for Rust: Rust code, commands, and examples belong in SKILL.md
+✅ **Separate other languages** - Put details for another language in its own file (PYTHON.md, etc.) only where it differs from the Rust approach
 ✅ **Provide complete templates** - Include full templates, not partial ones
-✅ **Prioritize clear descriptions** - Avoid examples or use generic examples only when necessary for clarity
+✅ **Prioritize clear descriptions** - Use examples only when necessary for clarity
 ✅ **Work in small steps** - Only implement what was requested, collaborate incrementally in small steps with the user
 ✅ **Use positive framing** - Describe what to do rather than what not to do when writing guidelines but use negatives when it provides extra clarity
 

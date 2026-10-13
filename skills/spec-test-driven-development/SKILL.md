@@ -16,25 +16,21 @@ When developing ANY new feature or functionality, follow this strict workflow:
 - Ensures you build on up-to-date, secure dependencies
 - If updates cause test failures, resolve them before proceeding
 
-### 1. Write Specification FIRST (spec.yaml)
-**Use the `specifying-requirements` skill to write specifications following project conventions.**
+### 1. Write Specification FIRST (ignored test stubs)
+**Use the `specifying-requirements` skill. The tests are the spec; there is no spec file.**
 
-The specifying-requirements skill provides detailed guidelines for:
-- Feature user story format (as_a, i_want, solutions)
-- Requirements organization and naming (REQ-XXX-NNN)
-- Requirement writing guidelines (atomic, testable, present tense)
-- Scenario writing (given/when/then format)
-- Proper YAML spec structure
+- Feature story goes in the `//!` module doc
+- Each requirement is an empty `#[ignore = "to-implement"]` test named `test_should_...`
 
-After writing spec:
+After writing the stubs:
 - Proceed straight to tests. Do not stop for user approval.
-- Tell the user where the spec is, then keep working.
+- Tell the user which file holds the spec, then keep working.
 
 ### 2. Write Tests SECOND (before implementation)
-- Write tests based on the spec requirements
-- One test per assertion (performance costs permitting)
+- Remove `#[ignore]` and fill in one stub at a time
+- One assertion per test (performance costs permitting)
 - Test naming: `test_should_{expected_behavior}`
-- Test files: `tests/test_{feature}/test_{module}.rs`
+- Unit tests live in the test module above the implementation
 
 **When to write unit tests vs acceptance tests:**
 - **Unit tests**: For isolated logic that doesn't require mocking
@@ -42,13 +38,9 @@ After writing spec:
 
 ### 3. Implement Code LAST
 - Write minimal code to make tests pass
-- Follow patterns from spec
 - Reuse existing infrastructure where possible
 - Update todo list as you work
-- **CRITICAL: Update spec.yaml requirement markers as you complete each requirement**
-  - After writing test: Set `test` field to `unit` or `acceptance`
-  - After implementing code: Set `code` field to `done`
-  - Example: `test: to-implement, code: to-implement` → `test: unit, code: to-implement` (test written) → `test: unit, code: done` (code implemented)
+- Status needs no bookkeeping: a passing test means done, `#[ignore]` means not built
 
 ### 4. Run Tests to Verify Implementation
 - **CRITICAL: After completing implementation, ALWAYS run the tests**
@@ -68,7 +60,7 @@ After writing spec:
 
 **Run pre-commit hooks:**
 ```bash
-pre-commit run --all-files
+prek run --all-files
 ```
 
 ## Commit Workflow

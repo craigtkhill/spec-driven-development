@@ -85,7 +85,7 @@ spec written → tests RED → tests GREEN → hooks pass → COMMIT
 
 When following the spec-test-driven development workflow:
 
-1. Pick a requirement from spec.yaml
+1. Pick an ignored requirement test
 2. Write test → see RED
 3. Implement → see GREEN
 4. Run ALL tests → all pass

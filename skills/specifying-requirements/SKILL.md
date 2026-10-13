@@ -1,61 +1,58 @@
 ---
 name: specifying-requirements
-description: Use when writing or updating spec.yaml files. Defines requirement format and user story structure.
+description: Use when specifying a feature or adding requirements. Defines requirements as named, ignored Rust tests with the user story in the module doc.
 ---
 
 # Specification Writing Skill
 
 This skill defines how to write specifications that follow the project's conventions.
+**The tests are the spec.** There is no separate spec file. A requirement is a test name.
 **CRITICAL:** Stick to the Domain Specific Language in this document. Do not add your own extra keys or structure.
 
 ## Before Writing a Spec
 
 **CRITICAL — before adding any requirements:**
 
-1. **Check for conflicting specs** — read any existing `spec.yaml` in the same feature area to avoid overlap
-2. **Check for duplicated requirements** — if a requirement already exists in another spec (even worded differently), do not restate it
-3. **Update the existing spec first** if one already covers this feature
-
-Requirement ID uniqueness is enforced by a linter — see `scripts/check-spec-ids.sh`.
+1. **Check for conflicting specs** — read the existing tests in the same feature area to avoid overlap
+2. **Check for duplicated requirements** — if a test already covers the behavior (even worded differently), do not add another
+3. **Update the existing feature's tests first** if they already cover this feature
 
 ## Specification Location
 
 **Specifications live close to the code** following the principle of locality of behavior:
 
-- Spec filename: `spec.yaml`
-- Location: In the same directory as the code it specifies, or in a feature-specific subdirectory
-- Example: `src/feature/spec.yaml`
+- Location: In the same file as the code it specifies, in the test module ABOVE the implementation
+- One feature = one test module
+- End-to-end scenarios live in `tests/{feature}_scenarios.rs` (see the `acceptance-test` skill)
 
 ## Specification Format
 
-Every spec.yaml file must follow this YAML structure:
+Every feature must follow this structure:
 
-```yaml
-feature:
-  name: Brief Feature Title
-  user: user role
-  goal: goal/capability
-  solutions:
-    - Solution 1
-    - Solution 2
+```rust
+//! Feature: Brief Feature Title
+//!   user: user role
+//!   goal: goal/capability
+//!   solutions:
+//!     - Solution 1
+//!     - Solution 2
 
-requirements:
-  - id: REQ-XXX-001
-    test: to-implement
-    code: to-implement
-    description: Specific, testable requirement
-    examples:
-      - input: {field: value}
-        output: {field: value}
-  - id: REQ-XXX-002
-    test: to-implement
-    code: to-implement
-    description: Another specific requirement
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_should_expected_behavior() { /* real test */ }
+
+    #[test]
+    #[ignore = "to-implement"]
+    fn test_should_another_expected_behavior() {}
+}
 ```
 
 ### Feature Section
 
-The `feature` section captures the user story and possible solutions.
+The `//!` module doc captures the user story and possible solutions.
 
 - `name`: Brief title for the feature
 - `user`: The end user role (always from the user's perspective, never a system component)
@@ -71,42 +68,39 @@ The `feature` section captures the user story and possible solutions.
 
 ### Requirements Section
 
-**Status markers for `test` field:**
-- `to-implement` = not yet implemented
-- `unit` = implemented via unit test
-- `acceptance` = implemented via acceptance test
-- `wont-implement` = intentionally not tested
+**Status comes from the test itself:**
+- No test exists = not specified yet
+- `#[ignore = "to-implement"]` = specified, not built
+- `#[ignore = "wont-implement: <reason>"]` = intentionally not built
+- Test passes = done
 
-**Status markers for `code` field:**
-- `to-implement` = not yet implemented
-- `done` = implemented
-- `wont-implement` = intentionally not implemented
+List the backlog with `cargo nextest run --run-ignored ignored-only`.
 
-**Requirements are a flat list — do NOT nest or group them.** Grouping by category creates artificial structure that encourages duplication and makes it harder to maintain sequential numbering.
+**Write ALL requirement stubs first** (empty `#[ignore = "to-implement"]` tests), then fill them in one at a time. A requirement with no stub is invisible.
+
+**Requirements are a flat list — do NOT nest or group them.** Grouping by category creates artificial structure that encourages duplication.
 
 **Requirement naming:**
-- Use feature-specific prefix for the `id`
-- Number sequentially starting from 001
-- Sequentiality does not need to be enforced (reduce work renumbering)
-  - You can skip numbers if a requirement is removed
-  - Add characters if adding a requirement between other requirements
+- The test name IS the requirement: `test_should_{expected_behavior}`
+- There are no requirement IDs
 - Keep requirements atomic and testable
-- One requirement per list item
+- One requirement per test
+- Add a `///` line above a test only when its name is not enough
 
 **CRITICAL - Atomic Requirements:**
 - Each requirement must test ONE specific thing
 - If a requirement has "and" or lists multiple attributes, split it into separate requirements
-- Each requirement should map to one test (or a small set of closely related tests)
+- Each requirement is one test
 
 **CRITICAL - User-Facing Requirements Only:**
 - Requirements must describe FEATURES from the user's perspective
-- Each requirement should be stated ONLY ONCE in the spec
+- Each requirement should be stated ONLY ONCE in the tests
 - DO NOT create separate requirements for implementation details
 
 **CRITICAL - No Implementation Details in Requirements:**
 - Requirements must describe WHAT the system does, never HOW it does it
 - DO NOT name specific libraries, frameworks, or tools in requirements
-- Library/tool choices belong in the `solutions` list, not in requirements
+- Library/tool choices belong in the `solutions` list, not in test names
 - A requirement should remain valid even if the underlying implementation is swapped
 
 **CRITICAL - Do Not Duplicate Existing Functionality:**
@@ -116,20 +110,29 @@ The `feature` section captures the user story and possible solutions.
 
 **Before adding a requirement, ask:**
 1. Is this something the user directly experiences or cares about?
-2. Have I already stated this requirement elsewhere in the spec or in another spec file?
+2. Have I already stated this requirement elsewhere in this feature's tests or in another test module?
 3. Is this describing WHAT the system does for the user, or HOW it does it internally?
 4. Is this behavior already implemented and tested in an existing module that this feature will reuse?
 
 ### Examples (Optional, Specification by Example)
 
-A requirement can carry an `examples` list — concrete `input`/`output` pairs that make an ambiguous rule unambiguous.
+A requirement can carry examples — concrete input/output pairs inside the test, as a loop over a table, that make an ambiguous rule unambiguous.
 
-- Only add examples when the description alone leaves a case open to interpretation (e.g. boundary values, edge cases)
-- Each example is a concrete case, not a restatement of the description
-- Keep `input`/`output` as flat key-value maps — no nested implementation objects
-- Not every requirement needs examples; skip them when the description is already unambiguous
+```rust
+#[test]
+fn test_should_expected_behavior() {
+    for (input, expected) in [(input_1, output_1), (input_2, output_2)] {
+        assert_eq!(function_under_test(input), expected, "{input:?}");
+    }
+}
+```
 
-### Scenarios Section (Optional)
+- Only add examples when the test name alone leaves a case open to interpretation (e.g. boundary values, edge cases)
+- Each example is a concrete case, not a restatement of the name
+- Keep inputs and outputs flat — no nested implementation objects
+- Not every requirement needs examples; skip them when the name is already unambiguous
+
+### Scenarios (Optional)
 
 **Use the `acceptance-test` skill for writing scenarios and acceptance tests.**
 
@@ -139,10 +142,10 @@ Scenarios are only needed when the feature requires end-to-end testing across mu
 
 This spec skill is **STEP 1** of the spec-test-driven development workflow:
 
-1. **Write Spec** ← (this skill)
-2. Write Tests (based on spec requirements)
+1. **Write Spec** ← (this skill): module doc + ignored stubs
+2. Write Tests (remove `#[ignore]` and fill in each stub)
 3. Implement Code (to pass tests)
 
 After completing the spec:
-1. Proceed to writing tests based on requirements using TDD. Do not wait for user approval.
+1. Proceed to filling in the stubs using TDD. Do not wait for user approval.
 2. Follow stdd skill for remaining steps

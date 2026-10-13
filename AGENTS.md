@@ -34,9 +34,9 @@ Development workflow skills are available to guide common tasks:
 
 - **`spec-test-driven-development`**: Use when implementing new features or functionality. Provides complete workflow from specification through testing to implementation.
 
-- **`specifying-requirements`**: Use when writing or updating spec.yaml files. Defines requirement format and user story structure.
+- **`specifying-requirements`**: Use when specifying a feature. Defines requirements as named, ignored Rust tests with the user story in the module doc.
 
-- **`acceptance-test`**: Use when writing acceptance tests or adding scenarios to spec.yaml. Defines Given/When/Then format and acceptance test patterns.
+- **`acceptance-test`**: Use when writing acceptance tests or scenarios. Defines Given/When/Then format and acceptance test patterns.
 
 - **`test-driven-development`**: Use when writing tests or implementing code. Defines RED-GREEN-REFACTOR cycle and test execution workflow. Includes language-specific guidance in PYTHON.md, RUST.md files.
 
