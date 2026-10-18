@@ -10,11 +10,15 @@ spec.loader.exec_module(create_diagram)
 
 diagram = create_diagram.build(WORKFLOW)
 in_diagram = {node.label for node in diagram.nodes if not node.diamond and not node.terminal}
-skills = {path.parent.name for path in SKILLS.glob("*/SKILL.md")} - {WORKFLOW.parent.name}
+existing = {path.parent.name for path in SKILLS.glob("*/SKILL.md")}
+skills = existing - {WORKFLOW.parent.name}
 
 failed = False
 for name in sorted(skills - in_diagram):
     print(f"FAIL {name}: skill is not in the workflow diagram")
+    failed = True
+for name in sorted(in_diagram - existing):
+    print(f"FAIL {name}: workflow calls a skill that does not exist")
     failed = True
 if WORKFLOW.with_suffix(".svg").read_text() != diagram.svg():
     print(f"FAIL {WORKFLOW.with_suffix('.svg')}: out of date, run create_diagram.py on workflow.py")

@@ -4,6 +4,7 @@
 |specifying-requirements:{SKILL.md}
 |acceptance-test:{SKILL.md}
 |test-driven-development:{SKILL.md,PYTHON.md,RUST.md}
+|write-code:{SKILL.md}
 |refactoring-code:{SKILL.md,FILE-ORGANIZATION.md,RUST.md}
 |write-commit-message:{SKILL.md}
 |install-dependencies:{SKILL.md,PYTHON.md,RUST.md,TYPESCRIPT.md}
@@ -38,7 +39,9 @@ Development workflow skills are available to guide common tasks:
 
 - **`acceptance-test`**: Use when writing acceptance tests or scenarios. Defines Given/When/Then format and acceptance test patterns.
 
-- **`test-driven-development`**: Use when writing tests or implementing code. Defines RED-GREEN-REFACTOR cycle and test execution workflow. Includes language-specific guidance in PYTHON.md, RUST.md files.
+- **`test-driven-development`**: Use when writing tests. Defines RED-GREEN-REFACTOR cycle and test execution workflow. Includes language-specific guidance in PYTHON.md, RUST.md files.
+
+- **`write-code`**: Use when implementing code to make failing tests pass. Defines the GREEN phase: minimal implementation, no untested features, and running the tests.
 
 - **`refactoring-code`**: Use during REFACTOR phase of TDD (after GREEN), when logic is duplicated, or when locality of behavior is violated. Defines search-first workflow, duplication detection, locality principles, and safe refactoring practices.
 

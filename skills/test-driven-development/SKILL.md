@@ -1,6 +1,6 @@
 ---
 name: test-driven-development
-description: Use when writing tests or implementing code. Defines RED-GREEN-REFACTOR cycle and test execution workflow.
+description: Use when writing tests. Defines RED-GREEN-REFACTOR cycle and test execution workflow; the GREEN implementation lives in the write-code skill.
 ---
 
 # Test-Driven Development (TDD) Skill
@@ -47,13 +47,7 @@ Write test(s) that fail.
 
 ### 2. GREEN: Write Minimal Implementation
 
-Write the MINIMUM code to make the tests pass.
-
-**Key principle**: Don't add features not yet tested. Don't over-engineer.
-
-**Run the tests again:**
-- Run the tests to verify they now pass
-- Expected outcome: GREEN (tests pass)
+**Use the `write-code` skill to write the minimal implementation and run the tests until they pass.**
 
 ### 3. VERIFY: Run ALL Tests
 
@@ -113,10 +107,7 @@ After all tests pass, continue with next requirements and repeat the cycle.
 - VERIFY phase ensures no regression in existing functionality
 
 ### Rule 3: Minimal Implementation
-- Write ONLY enough code to make the current test pass
-- Don't add features not yet tested
-- Don't over-engineer solutions
-- Prefer simple over clever
+- Use the `write-code` skill; it writes ONLY enough code to make the current test pass
 
 ### Rule 4: Test One Thing
 - Each test validates ONE behavior
@@ -166,7 +157,7 @@ TDD is **STEP 2** of the spec-test-driven development workflow:
 
 1. Write Spec (use `spec` skill)
 2. **Write Tests** ← (use this `tdd` skill)
-3. Implement Code (minimal code to pass tests)
+3. Implement Code (use the `write-code` skill)
 
 When writing tests:
 1. Start from the ignored stubs written in the spec step
@@ -180,11 +171,6 @@ When writing tests:
 - Skipping the RED phase (not verifying test fails)
 - Skipping the GREEN phase (not verifying test passes)
 - Skipping the VERIFY phase (not running all tests)
-
-### ❌ Over-Implementing
-- Adding features not yet tested
-- Writing more code than needed to pass the test
-- Implementing based on assumptions rather than tests
 
 ### ❌ Writing Bad Tests
 - Tests that don't fail when they should
