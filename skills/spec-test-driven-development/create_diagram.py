@@ -49,6 +49,8 @@ class Diagram:
         self.nodes: list[Node] = []
         self.edges: list[Edge] = []
         self.questions: dict[str, str] = {}
+        self.asked: dict[str, int] = {}
+        self.breaks: list[list[tuple[int, str]]] = []
 
     def add(self, label: str, diamond: bool = False, terminal: bool = False) -> int:
         self.nodes.append(Node(label, diamond, terminal))
@@ -75,21 +77,31 @@ class Diagram:
             return self.branch(statement, exits)
         if isinstance(statement, ast.While):
             return self.loop(statement, exits)
+        if isinstance(statement, ast.Break):
+            self.breaks[-1].extend(exits)
+            return []
         return exits
 
     def branch(self, statement: ast.If, exits: list[tuple[int, str]]) -> list[tuple[int, str]]:
         label, then_edge, else_edge = self.condition(statement.test)
-        diamond = self.add(label, diamond=True)
-        self.link(exits, diamond)
+        asked = self.asked.get(getattr(getattr(statement.test, "left", None), "id", None))
+        if asked is not None and exits == [(asked, "answer")]:
+            diamond = asked
+        else:
+            diamond = self.add(label, diamond=True)
+            self.link(exits, diamond)
         then_exits = self.block(statement.body, [(diamond, then_edge)])
         else_exits = self.block(statement.orelse, [(diamond, else_edge)])
         return then_exits + else_exits
 
     def loop(self, statement: ast.While, exits: list[tuple[int, str]]) -> list[tuple[int, str]]:
+        self.questions[statement.test.target.id] = first_argument(statement.test.value)
         diamond = self.add(first_argument(statement.test.value), diamond=True)
+        self.asked[statement.test.target.id] = diamond
         self.link(exits, diamond)
+        self.breaks.append([])
         self.link(self.block(statement.body, [(diamond, "answer")]), diamond, back=True)
-        return [(diamond, "blank")]
+        return [(diamond, "blank")] + self.breaks.pop()
 
     def condition(self, test: ast.expr) -> tuple[str, str, str]:
         if isinstance(test, ast.UnaryOp) and isinstance(test.op, ast.Not):
@@ -130,9 +142,14 @@ class Diagram:
         return [n for n in self.nodes if low <= n.rank <= high]
 
     def layout(self) -> tuple[dict[int, float], float, float]:
-        for index, node in enumerate(self.nodes):
-            sources = [self.nodes[e.source].rank for e in self.edges if e.target == index and not e.back]
-            node.rank = max(sources, default=-1) + 1
+        changed = True
+        while changed:
+            changed = False
+            for edge in self.edges:
+                source, target = self.nodes[edge.source], self.nodes[edge.target]
+                if not edge.back and target.rank <= source.rank:
+                    target.rank = source.rank + 1
+                    changed = True
         sinks = [i for i, n in enumerate(self.nodes) if n.terminal and not any(e.source == i for e in self.edges)]
         last = max(n.rank for i, n in enumerate(self.nodes) if i not in sinks) + 1
         for i in sinks:

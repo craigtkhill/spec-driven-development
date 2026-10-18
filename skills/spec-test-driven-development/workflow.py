@@ -28,37 +28,41 @@ else:
 
     run_skill("update-dependencies")
 
-    stage = ask_user("Is this a prototype or a full feature?")
-
-    if stage == "prototype":
-        run_skill("prototyping")
-
-        run_skill("write-code")
-    else:
-        kind = ask_user("Is this an engineering feature or a data feature?")
-
-        if kind == "data":
-            run_skill("evaluation")
-        else:
-            run_skill("acceptance-test")
-
-        while requirement := ask_user("What requirement do you want to build?"):
-            run_skill("specifying-requirements")
-
-            run_skill("test-driven-development")
+    while stage := ask_user("Is this a prototype or a full feature?"):
+        if stage == "prototype":
+            run_skill("prototyping")
 
             run_skill("write-code")
-
-            if check_if("the new code has a try/except or an edge-case branch"):
-                run_skill("error-handling")
-
-            run_skill("refactoring-code")
-
-            run_skill("pre-commit-hooks")
-
-            run_skill("write-commit-message")
-
-        if kind == "data":
-            run_skill("evaluation")
         else:
-            run_skill("acceptance-test")
+            kind = ask_user("Is this an engineering feature or a data feature?")
+
+            if kind == "data":
+                run_skill("evaluation")
+            else:
+                run_skill("acceptance-test")
+
+            while requirement := ask_user("What requirement do you want to build?"):
+                run_skill("specifying-requirements")
+
+                run_skill("test-driven-development")
+
+                run_skill("write-code")
+
+                if check_if("the new code has a try/except or an edge-case branch"):
+                    run_skill("error-handling")
+
+                run_skill("refactoring-code")
+
+                run_skill("pre-commit-hooks")
+
+                run_skill("write-commit-message")
+
+            if kind == "data":
+                run_skill("evaluation")
+            else:
+                run_skill("acceptance-test")
+
+        again = ask_user("Do you want to build another feature?")
+
+        if again == "no":
+            break
