@@ -10,5 +10,5 @@ repos:
         name: check workflow diagram
         entry: uv run python -I scripts/check-workflow-diagram.py
         language: system
-        files: ^skills/
+        files: ^(skills/|workflow\.svg$)
         pass_filenames: false

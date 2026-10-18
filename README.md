@@ -24,6 +24,16 @@ STDD Agents provides a structured workflow for developing applications using age
 
 *Note.* The aspiration is to make this toolkit agent harness agnostic. However, it is currently heavily configured for Claude Code.
 
+## Workflow
+
+![Workflow](workflow.svg)
+
+The diagram is generated from [`workflow.py`](skills/spec-test-driven-development/workflow.py):
+
+```bash
+uv run python -I skills/spec-test-driven-development/create_diagram.py skills/spec-test-driven-development/workflow.py workflow.svg
+```
+
 ## Quick Start
 
 ### Installation

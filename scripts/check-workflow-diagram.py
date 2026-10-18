@@ -3,6 +3,7 @@ from pathlib import Path
 
 SKILLS = Path("skills")
 WORKFLOW = SKILLS / "spec-test-driven-development" / "workflow.py"
+DIAGRAM = Path("workflow.svg")
 
 spec = importlib.util.spec_from_file_location("create_diagram", WORKFLOW.parent / "create_diagram.py")
 create_diagram = importlib.util.module_from_spec(spec)
@@ -20,8 +21,8 @@ for name in sorted(skills - in_diagram):
 for name in sorted(in_diagram - existing):
     print(f"FAIL {name}: workflow calls a skill that does not exist")
     failed = True
-if WORKFLOW.with_suffix(".svg").read_text() != diagram.svg():
-    print(f"FAIL {WORKFLOW.with_suffix('.svg')}: out of date, run create_diagram.py on workflow.py")
+if DIAGRAM.read_text() != diagram.svg():
+    print(f"FAIL {DIAGRAM}: out of date, run create_diagram.py on {WORKFLOW} {DIAGRAM}")
     failed = True
 
 raise SystemExit(failed)

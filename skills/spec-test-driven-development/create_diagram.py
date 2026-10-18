@@ -238,5 +238,4 @@ def build(source: Path) -> Diagram:
 
 
 if __name__ == "__main__":
-    source = Path(sys.argv[1])
-    source.with_suffix(".svg").write_text(build(source).svg())
+    Path(sys.argv[2]).write_text(build(Path(sys.argv[1])).svg())
