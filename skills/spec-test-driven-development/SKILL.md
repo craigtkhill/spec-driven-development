@@ -3,9 +3,8 @@ name: spec-test-driven-development
 description: Defines complete workflow from specification through testing to implementation.
 ---
 
-# Spec-TDD Development Workflow
 
-When developing ANY new feature or functionality, follow this strict workflow:
+The workflow is defined as code in [workflow.py](workflow.py).
 
 ## Workflow Steps
 
