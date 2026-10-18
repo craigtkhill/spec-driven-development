@@ -44,7 +44,7 @@ Development workflow skills are available to guide common tasks:
 
 - **`write-code`**: Use when implementing code to make failing tests pass. Defines the GREEN phase: minimal implementation, no untested features, and running the tests.
 
-- **`prototyping`**: Use before writing code for a prototype. Defines the short path: Python code, then the write-code skill, skipping specs, tests, and the rest of the workflow.
+- **`prototyping`**: Use before writing code for a prototype. Defines the short path: Python code (TypeScript for frontend), then the write-code skill, skipping specs, tests, and the rest of the workflow.
 
 - **`refactoring-code`**: Use during REFACTOR phase of TDD (after GREEN), when logic is duplicated, or when locality of behavior is violated. Defines search-first workflow, duplication detection, locality principles, and safe refactoring practices.
 
