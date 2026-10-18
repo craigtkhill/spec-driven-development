@@ -26,6 +26,11 @@ else:
 
     run_skill("update-dependencies")
 
+    if check_if("any dependencies were updated"):
+        run_skill("pre-commit-hooks")
+
+        run_skill("write-commit-message")
+
     while stage := ask_user("Is this a prototype or a full feature?"):
         if stage == "prototype":
             run_skill("prototyping")
