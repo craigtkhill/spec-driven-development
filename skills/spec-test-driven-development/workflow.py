@@ -18,9 +18,7 @@ def check_if(statement: str) -> bool:
     return reply.strip().lower() == "true"
 
 
-work = ask_user("Is this development or a new skill?")
-
-if work == "skill":
+if check_if("the user explicitly said this is a new skill"):
     run_skill("create-skill")
 else:
     if not check_if("all dependencies are installed"):
