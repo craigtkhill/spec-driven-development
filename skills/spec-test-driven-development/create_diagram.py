@@ -15,11 +15,16 @@ LANE_GAP = 14
 
 @dataclass
 class Node:
-    lines: list[str]
+    label: str
     diamond: bool
+    terminal: bool = False
     rank: int = 0
     x: float = 0
     y: float = 0
+
+    @property
+    def lines(self) -> list[str]:
+        return textwrap.wrap(self.label, 26)
 
     @property
     def width(self) -> float:
@@ -45,8 +50,8 @@ class Diagram:
         self.edges: list[Edge] = []
         self.questions: dict[str, str] = {}
 
-    def add(self, label: str, diamond: bool = False) -> int:
-        self.nodes.append(Node(textwrap.wrap(label, 26), diamond))
+    def add(self, label: str, diamond: bool = False, terminal: bool = False) -> int:
+        self.nodes.append(Node(label, diamond, terminal))
         return len(self.nodes) - 1
 
     def link(self, exits: list[tuple[int, str]], target: int, back: bool = False) -> None:
@@ -104,6 +109,11 @@ class Diagram:
         groups: dict[int | None, list[int]] = {}
         for index in row:
             groups.setdefault(self.parent(index), []).append(index)
+        for index in row:
+            sources = [self.nodes[e.source].x for e in self.edges if e.target == index and not e.back]
+            if self.nodes[index].terminal and len(sources) > 1:
+                groups[self.parent(index)].remove(index)
+                self.nodes[index].x = sum(sources) / len(sources)
         for parent, group in groups.items():
             centre = 0 if parent is None else self.nodes[parent].x
             total = sum(self.nodes[i].width for i in group) + COLUMN_GAP * (len(group) - 1)
@@ -123,6 +133,10 @@ class Diagram:
         for index, node in enumerate(self.nodes):
             sources = [self.nodes[e.source].rank for e in self.edges if e.target == index and not e.back]
             node.rank = max(sources, default=-1) + 1
+        sinks = [i for i, n in enumerate(self.nodes) if n.terminal and not any(e.source == i for e in self.edges)]
+        last = max(n.rank for i, n in enumerate(self.nodes) if i not in sinks) + 1
+        for i in sinks:
+            self.nodes[i].rank = last
         y = MARGIN
         for rank in range(max(n.rank for n in self.nodes) + 1):
             row = [i for i, n in enumerate(self.nodes) if n.rank == rank]
@@ -135,8 +149,10 @@ class Diagram:
             low, high = sorted((self.nodes[edge.source].rank, self.nodes[edge.target].rank))
             if edge.back:
                 lanes[index] = max(n.x + n.width / 2 for n in self.span(low, high)) + 30 + LANE_GAP * len(lanes)
-            elif high - low > 1:
+            elif high - low > 1 and self.nodes[edge.source].diamond:
                 lanes[index] = max(n.x + n.width / 2 for n in self.span(low, high)) + 30 + LANE_GAP * len(lanes)
+            elif high - low > 1:
+                lanes[index] = min(n.x - n.width / 2 for n in self.span(low, high)) - 30 - LANE_GAP * len(lanes)
         left = min([n.x - n.width / 2 for n in self.nodes] + list(lanes.values()))
         right = max([n.x + n.width / 2 for n in self.nodes] + list(lanes.values()))
         for node in self.nodes:
@@ -163,6 +179,8 @@ class Diagram:
         cx, cy = node.x, node.y + half_height
         if node.diamond:
             shape = f'<polygon points="{cx},{cy - half_height} {cx + half_width},{cy} {cx},{cy + half_height} {cx - half_width},{cy}" fill="#fff4d6" stroke="#b8860b"/>'
+        elif node.terminal:
+            shape = f'<rect x="{cx - half_width}" y="{cy - half_height}" width="{node.width}" height="{node.height}" rx="{half_height}" fill="#e3f4e8" stroke="#3b7d4f"/>'
         else:
             shape = f'<rect x="{cx - half_width}" y="{cy - half_height}" width="{node.width}" height="{node.height}" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/>'
         top = cy - (len(node.lines) - 1) * LINE_HEIGHT / 2
@@ -210,7 +228,15 @@ def first_argument(call: ast.Call) -> str:
     return call.args[0].value
 
 
-diagram = Diagram()
-tree = ast.parse(Path(sys.argv[1]).read_text())
-diagram.block([s for s in tree.body if not isinstance(s, (ast.ImportFrom, ast.FunctionDef))], [])
-Path(sys.argv[1]).with_suffix(".svg").write_text(diagram.svg())
+def build(source: Path) -> Diagram:
+    diagram = Diagram()
+    tree = ast.parse(source.read_text())
+    start = diagram.add("start", terminal=True)
+    exits = diagram.block([s for s in tree.body if not isinstance(s, (ast.ImportFrom, ast.FunctionDef))], [(start, "")])
+    diagram.link(exits, diagram.add("end", terminal=True))
+    return diagram
+
+
+if __name__ == "__main__":
+    source = Path(sys.argv[1])
+    source.with_suffix(".svg").write_text(build(source).svg())

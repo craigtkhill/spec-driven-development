@@ -6,3 +6,9 @@ repos:
         entry: scripts/check-skill-length.sh
         language: script
         files: SKILL\.md$
+      - id: check-workflow-diagram
+        name: check workflow diagram
+        entry: uv run python -I scripts/check-workflow-diagram.py
+        language: system
+        files: ^skills/
+        pass_filenames: false

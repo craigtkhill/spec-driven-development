@@ -28,7 +28,12 @@ else:
 
     run_skill("update-dependencies")
 
-    run_skill("acceptance-test")
+    kind = ask_user("Is this an engineering feature or a data feature?")
+
+    if kind == "data":
+        run_skill("evaluation")
+    else:
+        run_skill("acceptance-test")
 
     while requirement := ask_user("What requirement do you want to build?"):
         run_skill("specifying-requirements")
@@ -45,8 +50,6 @@ else:
         run_skill("pre-commit-hooks")
 
         run_skill("write-commit-message")
-
-    kind = ask_user("Is this an engineering feature or a data feature?")
 
     if kind == "data":
         run_skill("evaluation")
