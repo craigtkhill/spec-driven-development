@@ -35,7 +35,7 @@ Remove version pins from the dependencies you want to update:
 
 ### 3. Resolve new versions
 
-Run the package manager to resolve and install the latest compatible versions.
+Run the package manager to resolve and install the latest versions.
 
 - **Single package**: Use the package manager's targeted upgrade command
 - **All packages**: Use the package manager's full upgrade command
@@ -52,18 +52,25 @@ Update the dependency file with the exact versions the resolver chose.
 
 Run the package manager again to confirm the pinned versions match.
 
-### 7. Run tests
+### 7. Migrate breaking changes
+
+Check each updated dependency for breaking changes, using the changelog or release notes. Look first at major version bumps.
+
+If there are breaking changes, migrate the code to the new API before committing. Do not commit an update that leaves the code broken or deprecated.
+
+### 8. Run tests
 
 Run the full test suite to verify nothing broke.
 
-### 8. Handle test failure
+### 9. Handle test failure
 
 If tests fail after updating:
 
 1. Identify which dependency caused the failure
-2. Rollback to the previous state
-3. Report which dependency and version caused the issue
-4. Consider updating dependencies individually to isolate the problem
+2. If a breaking change caused it, migrate the code and run the tests again
+3. If the failure cannot be migrated, rollback to the previous state
+4. Report which dependency and version caused the issue
+5. Consider updating dependencies individually to isolate the problem
 
 ## Language-Specific Details
 
