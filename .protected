@@ -1,0 +1,6 @@
+# Files agents must not edit (gitignore-style patterns).
+# A human can still commit changes to these after signing off at the pre-commit prompt.
+.protected
+.pre-commit-config.yaml
+scripts/check-protected.sh
+scripts/sign-off-protected.sh

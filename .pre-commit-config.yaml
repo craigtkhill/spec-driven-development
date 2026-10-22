@@ -12,3 +12,9 @@ repos:
         language: system
         files: ^(skills/|workflow\.svg$)
         pass_filenames: false
+      - id: check-protected
+        name: check protected files
+        entry: scripts/check-protected.sh
+        language: script
+        always_run: true
+        pass_filenames: false
