@@ -7,8 +7,11 @@ The workflow is defined as code in [workflow.py](workflow.py).
 
 ## Questions
 
-Ask every `ask_user` in `workflow.py` before the first `run_skill`. No `run_skill` runs until all questions are answered.
+Ask every `ask_user` in `workflow.py` before the first `run_skill`.
 
-- A question inside an `if` is asked right after the answer it depends on, as a follow-up prompt. For example, ask engineering or data after the user picks full.
-- Do not stop after the first batch of questions. Check the code for questions that still apply.
-- Keep asking a `while ask_user` question until the user gives a blank answer.
+1. In one prompt, ask the development-or-skill, prototype-or-full, and engineering-or-data questions.
+2. For full, then ask each requirement, one per prompt, until the user gives a blank answer.
+
+- Do not stop after step one. Run step two when the user picks full.
+- Ask the engineering-or-data question every time, even for a prototype.
+- No `run_skill` runs until both steps are done.

@@ -26,9 +26,9 @@ if work == "skill":
 else:
     stage = ask_user("Is this a prototype or a full feature? (p/f)", {"p": "prototype", "f": "full"})
 
-    if stage == "full":
-        kind = ask_user("Is this an engineering feature or a data feature? (e/d)", {"e": "engineering", "d": "data"})
+    kind = ask_user("Is this an engineering feature or a data feature? (e/d)", {"e": "engineering", "d": "data"})
 
+    if stage == "full":
         requirements = []
 
         while requirement := ask_user("What requirement do you want to build?"):
