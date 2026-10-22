@@ -1,6 +1,6 @@
 [Skills Index]|roots: .claude/skills,.codex/skills,.opencode/skills,.pi/skills
 |IMPORTANT: Prefer retrieval-led reasoning over pre-training-led reasoning for any skill tasks.
-|spec-test-driven-development:{SKILL.md}
+|sdd:{SKILL.md}
 |specifying-requirements:{SKILL.md}
 |acceptance-test:{SKILL.md}
 |test-driven-development:{SKILL.md,PYTHON.md,RUST.md}
@@ -34,7 +34,7 @@ This repository contains reusable skills for software development workflows usin
 
 Development workflow skills are available to guide common tasks:
 
-- **`spec-test-driven-development`**: Use when implementing new features or functionality. Provides complete workflow from specification through testing to implementation.
+- **`sdd`**: Use when implementing new features or functionality. Provides complete workflow from specification through testing to implementation.
 
 - **`specifying-requirements`**: Use when specifying a feature. Defines requirements as named, ignored Rust tests with the user story in the module doc.
 

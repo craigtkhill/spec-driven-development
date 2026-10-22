@@ -1,4 +1,4 @@
-# Update STDD Agents - Other Agent Harnesses
+# Update Spec-Driven Development - Other Agent Harnesses
 
 Run these commands from your **project root**.
 
@@ -9,5 +9,5 @@ cd .<harness-name>
 git pull origin main
 cd ..
 git add .<harness-name>
-git commit -m "chore: update stdd-agents submodule"
+git commit -m "chore: update spec-driven-development submodule"
 ```

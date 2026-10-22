@@ -71,7 +71,7 @@ Do NOT include AI attribution, co-authored-by lines, or any other footers.
 
 ## When to Commit
 
-Commit once per completed requirement in the STDD cycle:
+Commit once per completed requirement in the SDD cycle:
 
 ```
 spec written → tests RED → tests GREEN → hooks pass → COMMIT
@@ -81,9 +81,9 @@ spec written → tests RED → tests GREEN → hooks pass → COMMIT
 - Each commit must represent a complete, working state
 - Do not batch multiple requirements into one commit
 
-## Integration with STDD Workflow
+## Integration with SDD Workflow
 
-When following the spec-test-driven development workflow:
+When following the spec-driven development workflow:
 
 1. Pick an ignored requirement test
 2. Write test → see RED

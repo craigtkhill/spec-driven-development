@@ -138,9 +138,9 @@ fn test_should_expected_behavior() {
 
 Scenarios are only needed when the feature requires end-to-end testing across multiple modules. Ask the user if scenarios apply before adding them.
 
-## Integration with STDD Workflow
+## Integration with SDD Workflow
 
-This spec skill is **STEP 1** of the spec-test-driven development workflow:
+This spec skill is **STEP 1** of the spec-driven development workflow:
 
 1. **Write Spec** ← (this skill): module doc + ignored stubs
 2. Write Tests (remove `#[ignore]` and fill in each stub)
@@ -148,4 +148,4 @@ This spec skill is **STEP 1** of the spec-test-driven development workflow:
 
 After completing the spec:
 1. Proceed to filling in the stubs using TDD. Do not wait for user approval.
-2. Follow stdd skill for remaining steps
+2. Follow sdd skill for remaining steps

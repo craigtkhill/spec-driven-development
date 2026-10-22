@@ -29,7 +29,7 @@ prek run --last-commit
 
 ## When to Run
 
-Always run `prek run --all-files` after implementing code and before committing, as part of the STDD workflow:
+Always run `prek run --all-files` after implementing code and before committing, as part of the SDD workflow:
 
 1. Tests pass (GREEN)
 2. **Run `prek run --all-files`** ← here

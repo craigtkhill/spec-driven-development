@@ -151,9 +151,9 @@ Follow project conventions for test names:
 Each test should have:
 - Clear name describing behavior
 
-## Integration with STDD Workflow
+## Integration with SDD Workflow
 
-TDD is **STEP 2** of the spec-test-driven development workflow:
+TDD is **STEP 2** of the spec-driven development workflow:
 
 1. Write Spec (use `spec` skill)
 2. **Write Tests** ← (use this `tdd` skill)

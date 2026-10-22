@@ -1,17 +1,16 @@
-# STDD Agents
+# Spec-Driven Development
 
 ```
-   _____ __________ ____     ___                     __
-  / ___//_  __/ __ / __ \   /   | ____ ____  ____  / /______
-  \__ \  / / / / / / / / /  / /| |/ __ `/ _ \/ __ \/ __/ ___/
- ___/ / / / / /_/ / /_/ /  / ___ / /_/ /  __/ / / / /_(__  )
-/____/ /_/ /_____/_____/  /_/  |_\__, /\___/_/ /_/\__/____/
-                                 /____/
+   _____ ____  ____
+  / ___// __ \/ __ \
+  \__ \/ / / / / / /
+ ___/ / /_/ / /_/ /
+/____/_____/_____/
 
-          Spec-Test-Driven Development Agents
+          Spec-Driven Development
 ```
 
-**Agents and configs following a Spec-Test-Driven Development process**
+**Agents and configs following a Spec-Driven Development process**
 
 This repository is designed for **agent harnesses** like:
 - **Claude Code**
@@ -20,7 +19,7 @@ This repository is designed for **agent harnesses** like:
 - **Pi**
 
 
-STDD Agents provides a structured workflow for developing applications using agent harnesses, emphasizing specification-first development with comprehensive testing to ensure stability while moving with higher velocity.
+Spec-Driven Development provides a structured workflow for developing applications using agent harnesses, emphasizing specification-first development with comprehensive testing to ensure stability while moving with higher velocity.
 
 *Note.* The aspiration is to make this toolkit agent harness agnostic. However, it is currently heavily configured for Claude Code.
 
@@ -28,10 +27,10 @@ STDD Agents provides a structured workflow for developing applications using age
 
 ![Workflow](workflow.svg)
 
-The diagram is generated from [`workflow.py`](skills/spec-test-driven-development/workflow.py):
+The diagram is generated from [`workflow.py`](skills/sdd/workflow.py):
 
 ```bash
-uv run python -I skills/spec-test-driven-development/create_diagram.py skills/spec-test-driven-development/workflow.py workflow.svg
+uv run python -I skills/sdd/create_diagram.py skills/sdd/workflow.py workflow.svg
 ```
 
 ## Quick Start
@@ -49,6 +48,6 @@ Choose your agent harness and follow the installation guide:
 ### Install as Claude Code Plugin
 
 ```bash
-/plugin marketplace add https://github.com/craigtkhill/stdd-agents
-/plugin install stdd-agents@stdd-agents
+/plugin marketplace add https://github.com/craigtkhill/spec-driven-development
+/plugin install spec-driven-development@spec-driven-development
 ```

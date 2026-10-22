@@ -2,7 +2,7 @@ import importlib.util
 from pathlib import Path
 
 SKILLS = Path("skills")
-WORKFLOW = SKILLS / "spec-test-driven-development" / "workflow.py"
+WORKFLOW = SKILLS / "sdd" / "workflow.py"
 DIAGRAM = Path("workflow.svg")
 
 spec = importlib.util.spec_from_file_location("create_diagram", WORKFLOW.parent / "create_diagram.py")

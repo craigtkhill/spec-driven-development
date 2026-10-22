@@ -3,15 +3,15 @@
 Run all commands from your **project root**.
 
 This setup will:
-1. Clone STDD Agents to `.claude/` directory, creating `.claude/AGENTS.md`
+1. Clone Spec-Driven Development to `.claude/` directory, creating `.claude/AGENTS.md`
 2. Create a symlink `CLAUDE.md` in the project root pointing to `.claude/AGENTS.md`
 3. Claude Code will read `CLAUDE.md` and access the skills index
 
 ## Installation
 
 ```bash
-# Add STDD Agents as a submodule
-git submodule add https://github.com/craigtkhill/stdd-agents.git .claude
+# Add Spec-Driven Development as a submodule
+git submodule add https://github.com/craigtkhill/spec-driven-development.git .claude
 
 # Initialize the submodule
 git submodule update --init --recursive
@@ -20,4 +20,4 @@ git submodule update --init --recursive
 ln -s .claude/AGENTS.md CLAUDE.md
 ```
 
-See [Update Instructions](../update/CLAUDE-CODE.md) for how to update STDD Agents.
+See [Update Instructions](../update/CLAUDE-CODE.md) for how to update Spec-Driven Development.

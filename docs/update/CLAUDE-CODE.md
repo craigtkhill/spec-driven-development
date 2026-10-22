@@ -1,4 +1,4 @@
-# Update STDD Agents - Claude Code
+# Update Spec-Driven Development - Claude Code
 
 Run these commands from your **project root**.
 
@@ -7,5 +7,5 @@ cd .claude
 git pull origin main
 cd ..
 git add .claude
-git commit -m "chore: update stdd-agents submodule"
+git commit -m "chore: update spec-driven-development submodule"
 ```

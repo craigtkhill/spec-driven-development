@@ -1,20 +1,20 @@
 {
-  "name": "stdd-agents",
+  "name": "spec-driven-development",
   "owner": {
     "name": "Craig Hill",
     "email": "64085763+craigtkhill@users.noreply.github.com"
   },
   "plugins": [
     {
-      "name": "stdd-agents",
+      "name": "spec-driven-development",
       "source": "./",
-      "description": "Spec-Test-Driven Development workflow plugin with skills for specification writing, test-driven development, and commit management",
+      "description": "Spec-Driven Development workflow plugin with skills for specification writing, test-driven development, and commit management",
       "version": "1.2.0",
       "author": {
         "name": "Craig Hill"
       },
-      "homepage": "https://github.com/craigtkhill/stdd-agents",
-      "repository": "https://github.com/craigtkhill/stdd-agents.git"
+      "homepage": "https://github.com/craigtkhill/spec-driven-development",
+      "repository": "https://github.com/craigtkhill/spec-driven-development.git"
     }
   ]
 }

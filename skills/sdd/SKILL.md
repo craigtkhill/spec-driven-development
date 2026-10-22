@@ -1,5 +1,5 @@
 ---
-name: spec-test-driven-development
+name: sdd
 description: Defines complete workflow from specification through testing to implementation.
 ---
 

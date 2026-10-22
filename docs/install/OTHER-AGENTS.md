@@ -1,14 +1,14 @@
 # Generic Agent Harness Setup
 
-This guide covers the general pattern for setting up STDD Agents with any agent harness that isn't specifically documented.
+This guide covers the general pattern for setting up Spec-Driven Development with any agent harness that isn't specifically documented.
 
 ## Installation Pattern
 
 Most agent harnesses follow this pattern for project-specific configuration:
 
 ```bash
-# 1. Add STDD Agents as a git submodule in your agent harness's config directory
-git submodule add https://github.com/craigtkhill/stdd-agents.git .<harness-name>
+# 1. Add Spec-Driven Development as a git submodule in your agent harness's config directory
+git submodule add https://github.com/craigtkhill/spec-driven-development.git .<harness-name>
 
 # 2. Initialize the submodule
 git submodule update --init --recursive
@@ -39,7 +39,7 @@ If your agent harness uses a different config file name (e.g., CURSOR.md):
 ln -s .<harness-name>/AGENTS.md <YOUR-CONFIG-FILE>.md
 ```
 
-See [Update Instructions](../update/OTHER-AGENTS.md) for how to update STDD Agents.
+See [Update Instructions](../update/OTHER-AGENTS.md) for how to update Spec-Driven Development.
 
 ## Next Steps
 
