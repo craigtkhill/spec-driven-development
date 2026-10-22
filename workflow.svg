@@ -1,70 +1,70 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="953" height="2459" font-family="sans-serif" font-size="13">
+<svg xmlns="http://www.w3.org/2000/svg" width="953" height="2510" font-family="sans-serif" font-size="13">
 <defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#555"/></marker></defs>
-<rect width="953" height="2459" fill="white"/>
+<rect width="953" height="2510" fill="white"/>
 <path d="M459.5,75 C459.5,105.0 459.5,105.0 459.5,135" fill="none" stroke="#555" marker-end="url(#arrow)"/>
-<path d="M459.5,205 C459.5,235.0 285.125,235.0 285.125,265" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="372.3125" y="235.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">skill</text>
+<path d="M459.5,205 C459.5,235.0 268.25,235.0 268.25,265" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="363.875" y="235.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">skill</text>
 <path d="M459.5,205 C459.5,235.0 549.5,235.0 549.5,265" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="504.5" y="235.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">otherwise</text>
-<path d="M549.5,335 L549.5,355 L723.875,355 L723.875,300.0 L693.875,300.0" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="723.875" y="317.5" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">answer</text>
-<path d="M549.5,335 C549.5,365.0 549.5,365.0 549.5,395" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="549.5" y="365.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">blank</text>
-<path d="M549.5,465 C549.5,495.0 549.5,495.0 549.5,525" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="549.5" y="495.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">no</text>
-<path d="M549.5,560 C549.5,590.0 549.5,590.0 549.5,620" fill="none" stroke="#555" marker-end="url(#arrow)"/>
-<path d="M677.0,430.0 L721.0,430.0 L721.0,600 L549.5,600 L549.5,620" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="699.0" y="424.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">yes</text>
-<path d="M549.5,655 C549.5,685.0 549.5,685.0 549.5,715" fill="none" stroke="#555" marker-end="url(#arrow)"/>
-<path d="M549.5,785 C549.5,815.0 549.5,815.0 549.5,845" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="549.5" y="815.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">yes</text>
-<path d="M549.5,880 C549.5,910.0 549.5,910.0 549.5,940" fill="none" stroke="#555" marker-end="url(#arrow)"/>
-<path d="M549.5,975 C549.5,1005.0 549.5,1005.0 549.5,1035" fill="none" stroke="#555" marker-end="url(#arrow)"/>
-<path d="M682.625,750.0 L757.5,750.0 L757.5,1015 L549.5,1015 L549.5,1035" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="720.0625" y="744.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">no</text>
-<path d="M549.5,1105 C549.5,1135.0 358.25,1135.0 358.25,1165" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="453.875" y="1135.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">prototype</text>
-<path d="M358.25,1200 C358.25,1256.0 358.25,1256.0 358.25,1312" fill="none" stroke="#555" marker-end="url(#arrow)"/>
-<path d="M549.5,1105 C549.5,1135.0 635.75,1135.0 635.75,1165" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="592.625" y="1135.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">otherwise</text>
-<path d="M635.75,1252 C635.75,1282.0 534.5,1282.0 534.5,1312" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="585.125" y="1282.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">data</text>
-<path d="M635.75,1252 C635.75,1282.0 718.25,1282.0 718.25,1312" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="677.0" y="1282.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">otherwise</text>
-<path d="M534.5,1347 C534.5,1377.0 534.5,1377.0 534.5,1407" fill="none" stroke="#555" marker-end="url(#arrow)"/>
-<path d="M718.25,1347 C718.25,1377.0 534.5,1377.0 534.5,1407" fill="none" stroke="#555" marker-end="url(#arrow)"/>
-<path d="M534.5,1460 C534.5,1490.0 343.25,1490.0 343.25,1520" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="438.875" y="1490.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">yes</text>
-<path d="M343.25,1555 C343.25,1611.0 343.25,1611.0 343.25,1667" fill="none" stroke="#555" marker-end="url(#arrow)"/>
-<path d="M343.25,1702 C343.25,1732.0 343.25,1732.0 343.25,1762" fill="none" stroke="#555" marker-end="url(#arrow)"/>
-<path d="M343.25,1797 C343.25,1827.0 343.25,1827.0 343.25,1857" fill="none" stroke="#555" marker-end="url(#arrow)"/>
-<path d="M343.25,1944 C343.25,1974.0 343.25,1974.0 343.25,2004" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="343.25" y="1974.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">yes</text>
-<path d="M343.25,2039 C343.25,2069.0 343.25,2069.0 343.25,2099" fill="none" stroke="#555" marker-end="url(#arrow)"/>
-<path d="M504.5,1900.5 L576.5,1900.5 L576.5,2079 L343.25,2079 L343.25,2099" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="540.5" y="1894.5" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">no</text>
-<path d="M343.25,2134 C343.25,2164.0 343.25,2164.0 343.25,2194" fill="none" stroke="#555" marker-end="url(#arrow)"/>
-<path d="M343.25,2229 C343.25,2259.0 343.25,2259.0 343.25,2289" fill="none" stroke="#555" marker-end="url(#arrow)"/>
-<path d="M343.25,2324 L343.25,2344 L913.0,2344 L913.0,1433.5 L645.125,1433.5" fill="none" stroke="#555" marker-end="url(#arrow)"/>
-<path d="M534.5,1460 C534.5,1490.0 665.75,1490.0 665.75,1520" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="600.125" y="1490.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">no</text>
-<path d="M665.75,1607 C665.75,1637.0 564.5,1637.0 564.5,1667" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="615.125" y="1637.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">data</text>
-<path d="M665.75,1607 C665.75,1637.0 748.25,1637.0 748.25,1667" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="707.0" y="1637.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">otherwise</text>
-<path d="M285.125,300 L285.125,320 L82.0,320 L82.0,2364 L489.03125,2364 L489.03125,2384" fill="none" stroke="#555" marker-end="url(#arrow)"/>
-<path d="M358.25,1347 L358.25,1367 L68.0,1367 L68.0,2364 L489.03125,2364 L489.03125,2384" fill="none" stroke="#555" marker-end="url(#arrow)"/>
-<path d="M564.5,1702 L564.5,1722 L54.0,1722 L54.0,2364 L489.03125,2364 L489.03125,2384" fill="none" stroke="#555" marker-end="url(#arrow)"/>
-<path d="M748.25,1702 L748.25,1722 L40.0,1722 L40.0,2364 L489.03125,2364 L489.03125,2384" fill="none" stroke="#555" marker-end="url(#arrow)"/>
+<path d="M549.5,386 L549.5,406 L740.75,406 L740.75,325.5 L710.75,325.5" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="740.75" y="355.75" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">answer</text>
+<path d="M549.5,386 C549.5,416.0 549.5,416.0 549.5,446" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="549.5" y="416.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">blank</text>
+<path d="M549.5,516 C549.5,546.0 549.5,546.0 549.5,576" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="549.5" y="546.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">no</text>
+<path d="M549.5,611 C549.5,641.0 549.5,641.0 549.5,671" fill="none" stroke="#555" marker-end="url(#arrow)"/>
+<path d="M677.0,481.0 L721.0,481.0 L721.0,651 L549.5,651 L549.5,671" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="699.0" y="475.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">yes</text>
+<path d="M549.5,706 C549.5,736.0 549.5,736.0 549.5,766" fill="none" stroke="#555" marker-end="url(#arrow)"/>
+<path d="M549.5,836 C549.5,866.0 549.5,866.0 549.5,896" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="549.5" y="866.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">yes</text>
+<path d="M549.5,931 C549.5,961.0 549.5,961.0 549.5,991" fill="none" stroke="#555" marker-end="url(#arrow)"/>
+<path d="M549.5,1026 C549.5,1056.0 549.5,1056.0 549.5,1086" fill="none" stroke="#555" marker-end="url(#arrow)"/>
+<path d="M682.625,801.0 L757.5,801.0 L757.5,1066 L549.5,1066 L549.5,1086" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="720.0625" y="795.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">no</text>
+<path d="M549.5,1156 C549.5,1186.0 358.25,1186.0 358.25,1216" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="453.875" y="1186.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">prototype</text>
+<path d="M358.25,1251 C358.25,1307.0 358.25,1307.0 358.25,1363" fill="none" stroke="#555" marker-end="url(#arrow)"/>
+<path d="M549.5,1156 C549.5,1186.0 635.75,1186.0 635.75,1216" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="592.625" y="1186.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">otherwise</text>
+<path d="M635.75,1303 C635.75,1333.0 534.5,1333.0 534.5,1363" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="585.125" y="1333.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">data</text>
+<path d="M635.75,1303 C635.75,1333.0 718.25,1333.0 718.25,1363" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="677.0" y="1333.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">otherwise</text>
+<path d="M534.5,1398 C534.5,1428.0 534.5,1428.0 534.5,1458" fill="none" stroke="#555" marker-end="url(#arrow)"/>
+<path d="M718.25,1398 C718.25,1428.0 534.5,1428.0 534.5,1458" fill="none" stroke="#555" marker-end="url(#arrow)"/>
+<path d="M534.5,1511 C534.5,1541.0 343.25,1541.0 343.25,1571" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="438.875" y="1541.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">yes</text>
+<path d="M343.25,1606 C343.25,1662.0 343.25,1662.0 343.25,1718" fill="none" stroke="#555" marker-end="url(#arrow)"/>
+<path d="M343.25,1753 C343.25,1783.0 343.25,1783.0 343.25,1813" fill="none" stroke="#555" marker-end="url(#arrow)"/>
+<path d="M343.25,1848 C343.25,1878.0 343.25,1878.0 343.25,1908" fill="none" stroke="#555" marker-end="url(#arrow)"/>
+<path d="M343.25,1995 C343.25,2025.0 343.25,2025.0 343.25,2055" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="343.25" y="2025.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">yes</text>
+<path d="M343.25,2090 C343.25,2120.0 343.25,2120.0 343.25,2150" fill="none" stroke="#555" marker-end="url(#arrow)"/>
+<path d="M504.5,1951.5 L576.5,1951.5 L576.5,2130 L343.25,2130 L343.25,2150" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="540.5" y="1945.5" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">no</text>
+<path d="M343.25,2185 C343.25,2215.0 343.25,2215.0 343.25,2245" fill="none" stroke="#555" marker-end="url(#arrow)"/>
+<path d="M343.25,2280 C343.25,2310.0 343.25,2310.0 343.25,2340" fill="none" stroke="#555" marker-end="url(#arrow)"/>
+<path d="M343.25,2375 L343.25,2395 L913.0,2395 L913.0,1484.5 L645.125,1484.5" fill="none" stroke="#555" marker-end="url(#arrow)"/>
+<path d="M534.5,1511 C534.5,1541.0 665.75,1541.0 665.75,1571" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="600.125" y="1541.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">no</text>
+<path d="M665.75,1658 C665.75,1688.0 564.5,1688.0 564.5,1718" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="615.125" y="1688.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">data</text>
+<path d="M665.75,1658 C665.75,1688.0 748.25,1688.0 748.25,1718" fill="none" stroke="#555" marker-end="url(#arrow)"/><text x="707.0" y="1688.0" text-anchor="middle" fill="#555" stroke="white" stroke-width="4" paint-order="stroke">otherwise</text>
+<path d="M268.25,300 L268.25,320 L82.0,320 L82.0,2415 L484.8125,2415 L484.8125,2435" fill="none" stroke="#555" marker-end="url(#arrow)"/>
+<path d="M358.25,1398 L358.25,1418 L68.0,1418 L68.0,2415 L484.8125,2415 L484.8125,2435" fill="none" stroke="#555" marker-end="url(#arrow)"/>
+<path d="M564.5,1753 L564.5,1773 L54.0,1773 L54.0,2415 L484.8125,2415 L484.8125,2435" fill="none" stroke="#555" marker-end="url(#arrow)"/>
+<path d="M748.25,1753 L748.25,1773 L40.0,1773 L40.0,2415 L484.8125,2415 L484.8125,2435" fill="none" stroke="#555" marker-end="url(#arrow)"/>
 <rect x="425.75" y="40.0" width="67.5" height="35" rx="17.5" fill="#e3f4e8" stroke="#3b7d4f"/><text x="459.5" y="61.5" text-anchor="middle" fill="#222">start</text>
 <polygon points="459.5,135.0 609.5,170.0 459.5,205.0 309.5,170.0" fill="#fff4d6" stroke="#b8860b"/><text x="459.5" y="165.5" text-anchor="middle" fill="#222">Is this development or a</text><text x="459.5" y="182.5" text-anchor="middle" fill="#222">new skill? (d/s)</text>
-<rect x="225.125" y="265.0" width="120.0" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="285.125" y="286.5" text-anchor="middle" fill="#222">create-skill</text>
-<polygon points="549.5,265.0 693.875,300.0 549.5,335.0 405.125,300.0" fill="#fff4d6" stroke="#b8860b"/><text x="549.5" y="295.5" text-anchor="middle" fill="#222">What requirement do you</text><text x="549.5" y="312.5" text-anchor="middle" fill="#222">want to build?</text>
-<polygon points="549.5,395.0 677.0,430.0 549.5,465.0 422.0,430.0" fill="#fff4d6" stroke="#b8860b"/><text x="549.5" y="425.5" text-anchor="middle" fill="#222">all dependencies are</text><text x="549.5" y="442.5" text-anchor="middle" fill="#222">installed</text>
-<rect x="459.5" y="525.0" width="180.0" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="549.5" y="546.5" text-anchor="middle" fill="#222">install-dependencies</text>
-<rect x="463.25" y="620.0" width="172.5" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="549.5" y="641.5" text-anchor="middle" fill="#222">update-dependencies</text>
-<polygon points="549.5,715.0 682.625,750.0 549.5,785.0 416.375,750.0" fill="#fff4d6" stroke="#b8860b"/><text x="549.5" y="745.5" text-anchor="middle" fill="#222">any dependencies were</text><text x="549.5" y="762.5" text-anchor="middle" fill="#222">updated</text>
-<rect x="474.5" y="845.0" width="150.0" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="549.5" y="866.5" text-anchor="middle" fill="#222">pre-commit-hooks</text>
-<rect x="459.5" y="940.0" width="180.0" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="549.5" y="961.5" text-anchor="middle" fill="#222">write-commit-message</text>
-<polygon points="549.5,1035.0 699.5,1070.0 549.5,1105.0 399.5,1070.0" fill="#fff4d6" stroke="#b8860b"/><text x="549.5" y="1065.5" text-anchor="middle" fill="#222">Is this a prototype or a</text><text x="549.5" y="1082.5" text-anchor="middle" fill="#222">full feature? (p/f)</text>
-<rect x="302.0" y="1165.0" width="112.5" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="358.25" y="1186.5" text-anchor="middle" fill="#222">prototyping</text>
-<rect x="305.75" y="1312.0" width="105.0" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="358.25" y="1333.5" text-anchor="middle" fill="#222">write-code</text>
-<polygon points="635.75,1165.0 797.0,1208.5 635.75,1252.0 474.5,1208.5" fill="#fff4d6" stroke="#b8860b"/><text x="635.75" y="1195.5" text-anchor="middle" fill="#222">Is this an engineering</text><text x="635.75" y="1212.5" text-anchor="middle" fill="#222">feature or a data feature?</text><text x="635.75" y="1229.5" text-anchor="middle" fill="#222">(e/d)</text>
-<rect x="482.0" y="1312.0" width="105.0" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="534.5" y="1333.5" text-anchor="middle" fill="#222">evaluation</text>
-<rect x="647.0" y="1312.0" width="142.5" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="718.25" y="1333.5" text-anchor="middle" fill="#222">acceptance-test</text>
-<polygon points="534.5,1407.0 645.125,1433.5 534.5,1460.0 423.875,1433.5" fill="#fff4d6" stroke="#b8860b"/><text x="534.5" y="1437.5" text-anchor="middle" fill="#222">next requirement?</text>
-<rect x="242.0" y="1520.0" width="202.5" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="343.25" y="1541.5" text-anchor="middle" fill="#222">specifying-requirements</text>
-<rect x="242.0" y="1667.0" width="202.5" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="343.25" y="1688.5" text-anchor="middle" fill="#222">test-driven-development</text>
-<rect x="290.75" y="1762.0" width="105.0" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="343.25" y="1783.5" text-anchor="middle" fill="#222">write-code</text>
-<polygon points="343.25,1857.0 504.5,1900.5 343.25,1944.0 182.0,1900.5" fill="#fff4d6" stroke="#b8860b"/><text x="343.25" y="1887.5" text-anchor="middle" fill="#222">the new code has a</text><text x="343.25" y="1904.5" text-anchor="middle" fill="#222">try/except or an edge-case</text><text x="343.25" y="1921.5" text-anchor="middle" fill="#222">branch</text>
-<rect x="275.75" y="2004.0" width="135.0" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="343.25" y="2025.5" text-anchor="middle" fill="#222">error-handling</text>
-<rect x="268.25" y="2099.0" width="150.0" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="343.25" y="2120.5" text-anchor="middle" fill="#222">refactoring-code</text>
-<rect x="268.25" y="2194.0" width="150.0" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="343.25" y="2215.5" text-anchor="middle" fill="#222">pre-commit-hooks</text>
-<rect x="253.25" y="2289.0" width="180.0" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="343.25" y="2310.5" text-anchor="middle" fill="#222">write-commit-message</text>
-<polygon points="665.75,1520.0 827.0,1563.5 665.75,1607.0 504.5,1563.5" fill="#fff4d6" stroke="#b8860b"/><text x="665.75" y="1550.5" text-anchor="middle" fill="#222">Is this an engineering</text><text x="665.75" y="1567.5" text-anchor="middle" fill="#222">feature or a data feature?</text><text x="665.75" y="1584.5" text-anchor="middle" fill="#222">(e/d)</text>
-<rect x="512.0" y="1667.0" width="105.0" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="564.5" y="1688.5" text-anchor="middle" fill="#222">evaluation</text>
-<rect x="677.0" y="1667.0" width="142.5" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="748.25" y="1688.5" text-anchor="middle" fill="#222">acceptance-test</text>
-<rect x="462.78125" y="2384.0" width="52.5" height="35" rx="17.5" fill="#e3f4e8" stroke="#3b7d4f"/><text x="489.03125" y="2405.5" text-anchor="middle" fill="#222">end</text>
+<rect x="208.25" y="265.0" width="120.0" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="268.25" y="286.5" text-anchor="middle" fill="#222">create-skill</text>
+<polygon points="549.5,265.0 710.75,325.5 549.5,386.0 388.25,325.5" fill="#fff4d6" stroke="#b8860b"/><text x="549.5" y="295.5" text-anchor="middle" fill="#222">What do you want to build?</text><text x="549.5" y="312.5" text-anchor="middle" fill="#222">Start with feat, fix,</text><text x="549.5" y="329.5" text-anchor="middle" fill="#222">test, docs, refactor,</text><text x="549.5" y="346.5" text-anchor="middle" fill="#222">style, chore, perf, ci, or</text><text x="549.5" y="363.5" text-anchor="middle" fill="#222">build.</text>
+<polygon points="549.5,446.0 677.0,481.0 549.5,516.0 422.0,481.0" fill="#fff4d6" stroke="#b8860b"/><text x="549.5" y="476.5" text-anchor="middle" fill="#222">all dependencies are</text><text x="549.5" y="493.5" text-anchor="middle" fill="#222">installed</text>
+<rect x="459.5" y="576.0" width="180.0" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="549.5" y="597.5" text-anchor="middle" fill="#222">install-dependencies</text>
+<rect x="463.25" y="671.0" width="172.5" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="549.5" y="692.5" text-anchor="middle" fill="#222">update-dependencies</text>
+<polygon points="549.5,766.0 682.625,801.0 549.5,836.0 416.375,801.0" fill="#fff4d6" stroke="#b8860b"/><text x="549.5" y="796.5" text-anchor="middle" fill="#222">any dependencies were</text><text x="549.5" y="813.5" text-anchor="middle" fill="#222">updated</text>
+<rect x="474.5" y="896.0" width="150.0" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="549.5" y="917.5" text-anchor="middle" fill="#222">pre-commit-hooks</text>
+<rect x="459.5" y="991.0" width="180.0" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="549.5" y="1012.5" text-anchor="middle" fill="#222">write-commit-message</text>
+<polygon points="549.5,1086.0 699.5,1121.0 549.5,1156.0 399.5,1121.0" fill="#fff4d6" stroke="#b8860b"/><text x="549.5" y="1116.5" text-anchor="middle" fill="#222">Is this a prototype or a</text><text x="549.5" y="1133.5" text-anchor="middle" fill="#222">full feature? (p/f)</text>
+<rect x="302.0" y="1216.0" width="112.5" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="358.25" y="1237.5" text-anchor="middle" fill="#222">prototyping</text>
+<rect x="305.75" y="1363.0" width="105.0" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="358.25" y="1384.5" text-anchor="middle" fill="#222">write-code</text>
+<polygon points="635.75,1216.0 797.0,1259.5 635.75,1303.0 474.5,1259.5" fill="#fff4d6" stroke="#b8860b"/><text x="635.75" y="1246.5" text-anchor="middle" fill="#222">Is this an engineering</text><text x="635.75" y="1263.5" text-anchor="middle" fill="#222">feature or a data feature?</text><text x="635.75" y="1280.5" text-anchor="middle" fill="#222">(e/d)</text>
+<rect x="482.0" y="1363.0" width="105.0" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="534.5" y="1384.5" text-anchor="middle" fill="#222">evaluation</text>
+<rect x="647.0" y="1363.0" width="142.5" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="718.25" y="1384.5" text-anchor="middle" fill="#222">acceptance-test</text>
+<polygon points="534.5,1458.0 645.125,1484.5 534.5,1511.0 423.875,1484.5" fill="#fff4d6" stroke="#b8860b"/><text x="534.5" y="1488.5" text-anchor="middle" fill="#222">next requirement?</text>
+<rect x="242.0" y="1571.0" width="202.5" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="343.25" y="1592.5" text-anchor="middle" fill="#222">specifying-requirements</text>
+<rect x="242.0" y="1718.0" width="202.5" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="343.25" y="1739.5" text-anchor="middle" fill="#222">test-driven-development</text>
+<rect x="290.75" y="1813.0" width="105.0" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="343.25" y="1834.5" text-anchor="middle" fill="#222">write-code</text>
+<polygon points="343.25,1908.0 504.5,1951.5 343.25,1995.0 182.0,1951.5" fill="#fff4d6" stroke="#b8860b"/><text x="343.25" y="1938.5" text-anchor="middle" fill="#222">the new code has a</text><text x="343.25" y="1955.5" text-anchor="middle" fill="#222">try/except or an edge-case</text><text x="343.25" y="1972.5" text-anchor="middle" fill="#222">branch</text>
+<rect x="275.75" y="2055.0" width="135.0" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="343.25" y="2076.5" text-anchor="middle" fill="#222">error-handling</text>
+<rect x="268.25" y="2150.0" width="150.0" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="343.25" y="2171.5" text-anchor="middle" fill="#222">refactoring-code</text>
+<rect x="268.25" y="2245.0" width="150.0" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="343.25" y="2266.5" text-anchor="middle" fill="#222">pre-commit-hooks</text>
+<rect x="253.25" y="2340.0" width="180.0" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="343.25" y="2361.5" text-anchor="middle" fill="#222">write-commit-message</text>
+<polygon points="665.75,1571.0 827.0,1614.5 665.75,1658.0 504.5,1614.5" fill="#fff4d6" stroke="#b8860b"/><text x="665.75" y="1601.5" text-anchor="middle" fill="#222">Is this an engineering</text><text x="665.75" y="1618.5" text-anchor="middle" fill="#222">feature or a data feature?</text><text x="665.75" y="1635.5" text-anchor="middle" fill="#222">(e/d)</text>
+<rect x="512.0" y="1718.0" width="105.0" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="564.5" y="1739.5" text-anchor="middle" fill="#222">evaluation</text>
+<rect x="677.0" y="1718.0" width="142.5" height="35" rx="6" fill="#e8f0fe" stroke="#4a6fa5"/><text x="748.25" y="1739.5" text-anchor="middle" fill="#222">acceptance-test</text>
+<rect x="458.5625" y="2435.0" width="52.5" height="35" rx="17.5" fill="#e3f4e8" stroke="#3b7d4f"/><text x="484.8125" y="2456.5" text-anchor="middle" fill="#222">end</text>
 </svg>

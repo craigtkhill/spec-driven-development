@@ -30,7 +30,7 @@ else:
 
     requirements = []
 
-    while requirement := ask_user("What requirement do you want to build?"):
+    while requirement := ask_user("What do you want to build? Start with feat, fix, test, docs, refactor, style, chore, perf, ci, or build."):
         requirements.append(requirement)
 
     if not check_if("all dependencies are installed"):
