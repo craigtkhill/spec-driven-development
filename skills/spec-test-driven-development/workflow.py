@@ -28,11 +28,10 @@ else:
 
     kind = ask_user("Is this an engineering feature or a data feature? (e/d)", {"e": "engineering", "d": "data"})
 
-    if stage == "full":
-        requirements = []
+    requirements = []
 
-        while requirement := ask_user("What requirement do you want to build?"):
-            requirements.append(requirement)
+    while requirement := ask_user("What requirement do you want to build?"):
+        requirements.append(requirement)
 
     if not check_if("all dependencies are installed"):
         run_skill("install-dependencies")

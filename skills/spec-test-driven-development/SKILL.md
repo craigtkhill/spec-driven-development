@@ -7,11 +7,10 @@ The workflow is defined as code in [workflow.py](workflow.py).
 
 ## Questions
 
-Ask every `ask_user` in `workflow.py` before the first `run_skill`.
+Ask every `ask_user` in `workflow.py` before the first `run_skill`, on every path.
 
-1. In one prompt, ask the development-or-skill, prototype-or-full, and engineering-or-data questions.
-2. For full, then ask each requirement, one per prompt, until the user gives a blank answer.
+1. In one prompt with the AskUserQuestion tool, ask the development-or-skill, prototype-or-full, and engineering-or-data questions.
+2. Then ask "What requirement do you want to build?" as a plain chat message. Do not use the AskUserQuestion tool. Wait for the reply. Repeat until the user gives a blank answer.
 
-- Do not stop after step one. Run step two when the user picks full.
 - Ask the engineering-or-data question every time, even for a prototype.
 - No `run_skill` runs until both steps are done.
