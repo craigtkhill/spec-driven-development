@@ -21,7 +21,8 @@ for _ in 1 2 3 4 5 6; do
 done
 retry=scripts/sign-off-protected.sh
 [ -n "$message" ] && retry="$retry && \\
-  git commit -m '$(printf %s "$message" | sed "s/'/'\\\\''/g")'"
+git commit -m '$(printf %s "$message" | sed "s/'/'\\\\''/g")'"
 echo "If you are a human, copy and run:" >&2
-printf "  %s\\n" "$retry" >&2
+echo >&2
+printf "%s\\n" "$retry" >&2
 exit 1
