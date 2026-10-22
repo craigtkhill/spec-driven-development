@@ -28,9 +28,11 @@ else:
 
     kind = ask_user("Is this an engineering feature or a data feature? (e/d)", {"e": "engineering", "d": "data"})
 
+    commit_type = ask_user("What type of change is this? (feat, fix, perf, refactor, or another type)")
+
     requirements = []
 
-    while requirement := ask_user("What do you want to build? Start with feat, fix, test, docs, refactor, style, chore, perf, ci, or build."):
+    while requirement := ask_user("What do you want to build?"):
         requirements.append(requirement)
 
     if not check_if("all dependencies are installed"):
