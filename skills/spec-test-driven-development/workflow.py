@@ -5,8 +5,9 @@ def load_skill(name: str) -> str:
     return Path(f"skills/{name}/SKILL.md").read_text()
 
 
-def ask_user(question: str) -> str:
-    return input(f"{question} ")
+def ask_user(question: str, aliases: dict[str, str] | None = None) -> str:
+    reply = input(f"{question} ")
+    return (aliases or {}).get(reply, reply)
 
 
 def run_skill(name: str) -> None:
@@ -18,7 +19,9 @@ def check_if(statement: str) -> bool:
     return reply.strip().lower() == "true"
 
 
-if check_if("the user explicitly said this is a new skill"):
+work = ask_user("Is this development or a new skill? (d/s)", {"d": "development", "s": "skill"})
+
+if work == "skill":
     run_skill("create-skill")
 else:
     if not check_if("all dependencies are installed"):
@@ -31,7 +34,7 @@ else:
 
         run_skill("write-commit-message")
 
-    while stage := ask_user("Is this a prototype or a full feature?"):
+    while stage := ask_user("Is this a prototype or a full feature? (p/f)", {"p": "prototype", "f": "full"}):
         if stage == "prototype":
             run_skill("prototyping")
 
