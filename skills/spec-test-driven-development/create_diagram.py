@@ -77,6 +77,8 @@ class Diagram:
             return self.branch(statement, exits)
         if isinstance(statement, ast.While):
             return self.loop(statement, exits)
+        if isinstance(statement, ast.For):
+            return self.each(statement, exits)
         if isinstance(statement, ast.Break):
             self.breaks[-1].extend(exits)
             return []
@@ -102,6 +104,12 @@ class Diagram:
         self.breaks.append([])
         self.link(self.block(statement.body, [(diamond, "answer")]), diamond, back=True)
         return [(diamond, "blank")] + self.breaks.pop()
+
+    def each(self, statement: ast.For, exits: list[tuple[int, str]]) -> list[tuple[int, str]]:
+        diamond = self.add(f"next {statement.target.id}?", diamond=True)
+        self.link(exits, diamond)
+        self.link(self.block(statement.body, [(diamond, "yes")]), diamond, back=True)
+        return [(diamond, "no")]
 
     def condition(self, test: ast.expr) -> tuple[str, str, str]:
         if isinstance(test, ast.UnaryOp) and isinstance(test.op, ast.Not):
