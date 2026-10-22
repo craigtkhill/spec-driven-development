@@ -97,13 +97,16 @@ class Diagram:
         return then_exits + else_exits
 
     def loop(self, statement: ast.While, exits: list[tuple[int, str]]) -> list[tuple[int, str]]:
-        self.questions[statement.test.target.id] = first_argument(statement.test.value)
-        diamond = self.add(first_argument(statement.test.value), diamond=True)
-        self.asked[statement.test.target.id] = diamond
+        test, ends = statement.test, "blank"
+        if isinstance(test, ast.Compare):
+            test, ends = test.left, test.comparators[0].value
+        self.questions[test.target.id] = first_argument(test.value)
+        diamond = self.add(first_argument(test.value), diamond=True)
+        self.asked[test.target.id] = diamond
         self.link(exits, diamond)
         self.breaks.append([])
         self.link(self.block(statement.body, [(diamond, "answer")]), diamond, back=True)
-        return [(diamond, "blank")] + self.breaks.pop()
+        return [(diamond, ends)] + self.breaks.pop()
 
     def each(self, statement: ast.For, exits: list[tuple[int, str]]) -> list[tuple[int, str]]:
         diamond = self.add(f"next {statement.target.id}?", diamond=True)

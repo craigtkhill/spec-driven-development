@@ -6,12 +6,15 @@ def load_skill(name: str) -> str:
 
 
 def ask_user(question: str, aliases: dict[str, str] | None = None) -> str:
+    if yolo:
+        return agent.run(f"Do not ask the user. From this goal, answer, or reply done when nothing is left: {goal}\n\n{question}")
+
     reply = input(f"{question} ")
     return (aliases or {}).get(reply, reply)
 
 
 def run_skill(name: str) -> None:
-    agent.run(f"{load_skill(name)}\n\nRun the skill.")
+    agent.run(f"{load_skill(name)}\n\nRun the skill." + (" Do not ask the user. Decide yourself." if yolo else ""))
 
 
 def check_if(statement: str) -> bool:
@@ -32,7 +35,7 @@ else:
 
     requirements = []
 
-    while requirement := ask_user("What do you want to build?"):
+    while (requirement := ask_user("What do you want to build? Type done when finished.")) != "done":
         requirements.append(requirement)
 
     if not check_if("all dependencies are installed"):
