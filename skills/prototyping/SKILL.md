@@ -1,6 +1,6 @@
 ---
 name: prototyping
-description: Use before writing code for a prototype. Defines the short path: the repo's existing language (Python, or TypeScript for frontend, when starting fresh), then the write-code skill, skipping specs, tests, and the rest of the workflow.
+description: Use before writing code for a prototype. Defines the short path: the repo's existing language (Python, or TypeScript for frontend, when the repo shows no clear pattern), then the write-code skill, skipping specs, tests, and the rest of the workflow.
 ---
 
 # Prototyping
@@ -11,7 +11,7 @@ A prototype is quick code to try an idea. Use the short path.
 
 Stay in the language the repo already uses. Match its existing code, tooling, and conventions.
 
-When the repo has no code yet, or the prototype starts a new project, pick a default:
+Only when the repo shows no clear language pattern, use this as a starting suggestion:
 - Frontend code: TypeScript
 - Anything else: Python
 
